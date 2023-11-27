@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.17)  26 NOV 2023 21:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 23.10.12) (preloaded format=pdflatex 2023.10.17)  26 NOV 2023 22:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,31 +279,41 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
  (C:\Users\raulp\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-) [1{C:/Users/raulp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
+)
+Underfull \hbox (badness 4832) in paragraph at lines 99--101
+[]\OT1/ptm/m/n/10 A seguir as sess[]oes ser[]ao ap-re-sen-tadas em or-dem
+ []
+
+[1{C:/Users/raulp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 4168) in paragraph at lines 141--146
+Underfull \hbox (badness 4168) in paragraph at lines 142--147
  \OT1/ptm/m/it/10 6) Red-i-men-sion-a-mento: [][] \OT1/ptm/m/n/10 O red-i-men-sion-a-mento []e uma
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 148--153
+Underfull \hbox (badness 1728) in paragraph at lines 149--154
 \OT1/ptm/m/n/10 etapa do pr[]e-processamento que visa cor-ri-gir distor[][]oes
  []
 
 [2]
-Underfull \hbox (badness 5403) in paragraph at lines 256--261
+Underfull \hbox (badness 5403) in paragraph at lines 257--262
  \OT1/ptm/m/it/10 3) Transforma[][]oes Logar[]^^Ptmicas e Ex-po-nen-ci-ais: [][] \OT1/ptm/m/n/10 As
  []
 
 [3]
-Underfull \hbox (badness 1394) in paragraph at lines 306--310
+Underfull \hbox (badness 7326) in paragraph at lines 383--385
+[]\OT1/ptm/m/n/10 E para as conex[]oes en-tre neur[]onios as seguintes
+ []
+
+[4]
+Underfull \hbox (badness 1394) in paragraph at lines 453--457
 \OT1/ptm/m/n/10 processamento para garan-tir a qual-i-dade e uni-formi-dade
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 574--577
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 721--724
 \OT1/ptm/m/n/8 2023. Dispon[]^^Pvel em: <https://www.embrapa.br/busca-de-noticias/-
  []
 
@@ -318,24 +328,26 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (conference_101719.aux)
+[6
+
+] (conference_101719.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4222 strings out of 474824
- 66207 string characters out of 5750976
+ 4223 strings out of 474824
+ 66214 string characters out of 5750976
  1954043 words of memory out of 5000000
  26130 multiletter control sequences out of 15000+600000
- 600302 words of font info for 124 fonts, out of 8000000 for 9000
+ 601398 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,643b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (4 pages, 127106 bytes).
+Output written on conference_101719.pdf (6 pages, 139337 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
+ 62 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

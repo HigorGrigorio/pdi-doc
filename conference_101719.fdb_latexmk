@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1701044278 "c:/Users/raulp/OneDrive - ifsp.edu.br/FACUL/Latex/PDI_HIGOR_ANDRE/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1701044279 0
+["pdflatex"] 1701046824 "c:/Users/raulp/OneDrive - ifsp.edu.br/FACUL/Latex/PDI_HIGOR_ANDRE/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1701046825 0
   "C:/Users/raulp/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1700792370 82705 9cc9f144eacd499bc23a611703921467 ""
   "C:/Users/raulp/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1697519113 24175185 f6f5c09b2f3c9e418a1eabbdef293604 ""
   "C:/Users/raulp/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/base/8r.enc" 1458473887 4993 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -75,9 +75,9 @@
   "C:/Users/raulp/AppData/Local/Programs/MiKTeX/tex/latex/psnfss/ot1ptm.fd" 1585253778 1007 15056f4a61917ceed3a44e4ac11fcc52 ""
   "C:/Users/raulp/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1656236890 56148 51a9a8571c07b9921892ae11063ae853 ""
   "IEEEtran.cls" 1700792348 281957 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "c:/Users/raulp/OneDrive - ifsp.edu.br/FACUL/Latex/PDI_HIGOR_ANDRE/conference_101719.tex" 1701044276 36322 7fe2fb282bea13d6c18e5a5fa4060d56 ""
-  "conference_101719.aux" 1701044279 4326 598e9ae7e4b35ea4481fed3c9d8e8024 "pdflatex"
-  "conference_101719.tex" 1701044276 36322 7fe2fb282bea13d6c18e5a5fa4060d56 ""
+  "c:/Users/raulp/OneDrive - ifsp.edu.br/FACUL/Latex/PDI_HIGOR_ANDRE/conference_101719.tex" 1701046821 45482 ea37e32245aae40f00b5ce0f31f74f30 ""
+  "conference_101719.aux" 1701046825 5046 a9667c259c853f0da4e9b661a6d4d26e "pdflatex"
+  "conference_101719.tex" 1701046821 45482 ea37e32245aae40f00b5ce0f31f74f30 ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"

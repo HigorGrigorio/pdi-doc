@@ -96,7 +96,8 @@ A análise de imagens metalográficas e de fibras vegetais;
 A obtenção de imagens médicas por ultra-som, radiação nuclear ou técnicas de tomografia computadorizada; 
 Aplicações em automação industrial envolvendo o uso de sensores visuais em robôs.
 
-É possível dividir o PDI em 3 etapas: Pré-processamento; Realce e; Classificação de imagens.
+A seguir as sessões serão apresentadas em ordem cronológica que o processamento 
+digital de imagem ocorreu de acordo com o desenvolvimento do trabalho.
 
 \subsection{Pré Processamento}
 
@@ -204,7 +205,7 @@ s = c . \log(1 + |r|)
 onde $r$ é o valor do pixel original, $s$ é o valor do pixel resultante e $c$ é uma constante que 
 controla a amplitude da transformação.
 
-\subsection{Realce no Domínio da Frequência}
+\subsubsection{Realce no Domínio da Frequência}
 A ideia central do processamento no domínio da frequência é que certas operações, como filtragem, 
 podem ser realizadas mais facilmente ou de forma mais intuitiva no domínio da frequência do que no domínio espacial.
 \cite{gonzalez2000}
@@ -288,6 +289,152 @@ A segmentação de imagem será realizada através do uso de redes neurais convo
 especializadas no processamento de imagens, sendo capazes de realizar a segmentação de imagens, a classificação de imagens,
 entre outras tarefas.
 
+\section{Inteligência Artificial}
+%Validar e incrementar o texto abaixo
+A Inteligência Artificial (IA) é uma subárea fascinante da ciência da computação,
+dedicada ao desenvolvimento de algoritmos e técnicas que habilitam os computadores a
+executar tarefas tradicionalmente associadas à inteligência humana.
+Isso inclui desafios como reconhecimento de padrões, aprendizado e tomada de decisão.
+\cite{lima2014inteligencia}
+
+As subáreas da IA, como aprendizado de máquina e processamento de linguagem natural, 
+oferecem soluções especializadas para problemas distintos. Por exemplo, o aprendizado
+de máquina foca no treinamento de modelos para prever ou categorizar dados com base em
+exemplos anteriores, enquanto o processamento de linguagem natural lida com a interação
+entre máquinas e linguagem humana.
+\cite{faceli2022inteligencia}
+
+Diversas técnicas são empregadas na implementação da IA, como redes neurais artificiais
+— inspiradas na estrutura do cérebro humano — e algoritmos genéticos que simulam a seleção natural.
+
+A revolução trazida pela IA pode ser vista em diversas áreas. Na medicina, algoritmos são usados para
+prever doenças com base em registros médicos. Na astronomia, auxilia na categorização e descoberta de
+corpos celestes. Na agricultura, a precisão tem sido aprimorada com o uso de tecnologias baseadas em IA.
+\cite{faceli2022inteligencia}
+
+Neste trabalho, focaremos na segmentação de imagens, uma tarefa crucial que permite a extração de coordenadas
+geográficas. Estas informações são fundamentais para a agricultura de precisão, possibilitando um gerenciamento
+mais eficiente dos cultivos e otimizando o uso de recursos.
+
+\subsection{Aprendizado de Máquina}
+%Validar e incrementar o texto abaixo
+O aprendizado de máquina (AM), uma das principais subáreas da inteligência artificial, se concentra na 
+construção de sistemas capazes de aprender e aprimorar sua performance a partir da análise de dados. 
+Estes sistemas são projetados para executar tarefas que, tradicionalmente, requerem a inteligência 
+humana – como reconhecer padrões e tomar decisões baseadas em informações.
+
+Segundo \cite{faceli2022inteligencia} podemos categorizar os algoritmos em algumas principais 
+abordagens, dentre elas, podemos destacar:
+
+\begin{itemize}
+    \item {\textbf{Aprendizado Supervisionado:}}
+    Neste tipo, os algoritmos são treinados usando conjuntos de dados onde as respostas corretas são 
+    conhecidas. Ou seja, os dados são "rotulados". O objetivo é que o modelo possa fazer previsões ou 
+    inferências precisas quando apresentado a novos dados que se assemelham aos dados de treinamento.
+
+    \item {\textbf{Aprendizado Semi-Supervisionado:}}
+    Uma combinação de dados rotulados e não rotulados é utilizada para o treinamento. Isso é 
+    especialmente útil quando rotular dados é caro ou demorado. Os modelos aproveitam os dados não 
+    rotulados para melhorar sua generalização, atribuindo pesos ou confiabilidade diferenciados com 
+    base na sua confiança nas predições.
+
+    \item {\textbf{Aprendizado Não Supervisionado:}}
+    Aqui, os algoritmos são expostos a dados que não possuem rótulos pré-definidos. O objetivo 
+    principal é descobrir estruturas ocultas nos dados, como grupos ou padrões. É como dar um 
+    quebra-cabeça ao algoritmo e pedir que ele identifique peças semelhantes.
+
+    \item {\textbf{Aprendizado por Reforço:}}
+    Embora não tenha sido mencionado anteriormente, vale a pena destacar que no aprendizado por reforço, 
+    o algoritmo aprende através de tentativa e erro, recebendo recompensas ou punições com base nas 
+    ações que realiza.
+\end{itemize}
+
+\subsection{Redes Neurais Artificiais}
+As Redes Neurais Artificiais (RNA) são modelos computacionais inspirados na estrutura do sistema 
+nervoso central de seres vivos. O núcleo dessas redes são os neurônios artificiais, unidades de 
+processamento que recebem valores de entrada, processam-nos e geram um valor de saída.
+
+A interconexão entre esses neurônios se dá por meio de 'sinapses artificiais', que têm pesos 
+associados. Esses pesos determinam a importância e influência de um neurônio sobre o outro.
+
+O conceito de redes neurais não é recente. A ideia remonta à década de 1940 com pioneiros como 
+Warren McCulloch e Walter Pitts, que introduziram redes simples baseadas em neurônios binários, 
+que simulavam o funcionamento dos neurônios biológicos, contudo este modelo era muito limitado sendo 
+capaz de resolver apenas problemas linearmente separáveis, e ao introduzir múltiplas camadas 
+ocorria-se o problema de desvanecimento de gradiente resultando em pequenas alterações em redes 
+muito profundas.\cite{braga2016redes}
+
+Felizmente, técnicas avançadas de treinamento foram desenvolvidas para combater esse problema. 
+Algoritmos como o Resilient Propagation, que otimiza sem depender estritamente da derivada do erro, 
+e o Adam, que ajusta dinamicamente as taxas de aprendizado, são soluções inovadoras que permitem que 
+as redes neurais de multiplas camadas aprendam de forma eficaz e eficiente.\cite{braga2016redes}
+
+Segundo \cite{faceli2022inteligencia} as RNA's podem ser classificadas em categorias, baseado na 
+forma como os dados são passados entre as camadas, e na forma como os neurônios estão conectados. 
+Com base nisso temos as seguintes categorias:
+\begin{itemize}
+    \item {\emph{\textbf{Feedforward:}}}
+    Neste tipo de rede, os neurônios de uma camada estão conectados apenas aos neurônios da camada seguinte.
+    \item {\emph{\textbf{Feedback:}}}
+    Em redes \emph{Feedback}, os neurônios além de estarem conectados aos da camada seguinte, estão 
+    conectados ao valor obtido na saída, de forma a seu valor atual, depender do resultado de saída passado.
+\end{itemize}
+
+E para as conexões entre neurônios as seguintes classificações:
+\begin{itemize}
+    \item {\textbf{Completamente conectada:}}
+    Quando os neurônios da camada estão conectados a todos os neurônios da camada seguinte e/ou anterior.
+    \item {\textbf{Localmente conectada:}}
+    Quando os neurônios que estão conectados a camada seguinte e/ou anterior estão em uma região bem definida.
+    \item {\textbf{Parcialmente conectada:}}
+    Quando os neurônios estão conectados a apenas alguns dos neurônios da camada anterior e/ou seguinte.
+\end{itemize}
+
+As RNAs multicamadas, também conhecidas como redes profundas, têm a capacidade de executar tarefas 
+muito mais complexas, como classificar e segmentar imagens. No entanto, elas enfrentam desafios, 
+como o desvanecimento do gradiente. Esse fenômeno ocorre durante o treinamento, quando os ajustes 
+necessários nos pesos (através do método de gradiente descendente) tornam-se muito pequenos, 
+impedindo a rede de aprender adequadamente.
+
+Em uma RNA, os neurônios estão organizados em camadas:
+\begin{itemize}
+    \item {\textbf{Camada de Entrada:}} Recebe dados externos e os transfere para a camada seguinte.
+
+    \item {\textbf{Camadas Ocultas:}} Localizadas entre a entrada e a saída, processam os dados 
+    transferindo-os adiante.
+    
+    \item {\textbf{Camada de Saída:}} Produz o resultado final da rede.
+\end{itemize}
+
+\subsection{Redes Neurais Convolucionais}
+As Redes Neurais Convolucionais (CNNs), derivadas do inglês \emph{Convolutional Neural Network}, 
+têm emergido como um paradigma crucial no campo da aprendizagem profunda, especialmente em aplicações 
+que envolvem processamento de imagens.
+
+Inspirando-se na organização do córtex visual humano, as CNNs possuem uma estrutura única e 
+diferenciada. Esta estrutura é composta principalmente por:
+\begin{itemize}
+    \item {\textbf{Camada Convolucional:}}
+    Esta camada implementa uma operação de convolução, que envolve a aplicação de filtros para 
+    detectar padrões locais, como bordas e texturas. É pertinente observar que cada filtro é treinado 
+    para identificar um tipo específico de característica na entrada.
+
+    \item {\textbf{Camada de Pooling:}}
+    Sequencialmente à operação de convolução, as CNNs empregam uma camada de pooling. Esta camada 
+    visa reduzir a dimensionalidade espacial, retendo as características mais salientes. 
+    Um exemplo comum dessa operação é o "Max Pooling", que seleciona o valor máximo em uma janela definida.
+
+    \item {\textbf{Camada Totalmente Conectada:}}
+     Em suas camadas finais, as CNNs convergem para uma estrutura densamente conectada, semelhante 
+     às redes neurais tradicionais. Aqui, as características reconhecidas são utilizadas para realizar 
+     funções como classificação ou regressão.
+\end{itemize}
+
+As Redes Neurais Convolucionais têm estabelecido novos padrões no domínio da visão computacional e 
+do processamento de imagens. Através da compreensão de sua arquitetura e das nuances que as 
+distinguem de outros modelos, é possível otimizar sua implementação para diversas aplicações, 
+promovendo avanços significativos no campo da inteligência artificial.
+
 \section{Metodologia}
 Neste capítulo, será apresentada a metodologia utilizada para desenvolver a solução proposta. 
 O processo de georreferenciamento automatizado de imagens agrícolas envolverá diversas etapas, 
@@ -316,12 +463,12 @@ onde as regiões de interesse nas imagens estarão marcadas.
 
 \subsection{Extração de Coordenadas Geográficas}
 %Validar e incrementar o texto abaixo
-Uma imagem saída do processo de segmentação de imagens não possui nenhuma informação geográfica, sendo necessário a extração
-das coordenadas geográficas das regiões de interesse, para que se possa utilizar as informações extraídas para o uso em
-equipamentos de agricultura de precisão.
+Uma imagem saída do processo de segmentação de imagens não possui nenhuma informação geográfica, 
+sendo necessário a extração das coordenadas geográficas das regiões de interesse, para que se possa 
+utilizar as informações extraídas para o uso em equipamentos de agricultura de precisão.
 
-Dessa forma é necessário o desenvolvimento de um algoritmo que seja capaz de extrair as coordenadas geográficas das regiões
-de interesse, e aplica-las a imagem resultante do processo de segmentação.
+Dessa forma é necessário o desenvolvimento de um algoritmo que seja capaz de extrair as coordenadas 
+geográficas das regiões de interesse, e aplica-las a imagem resultante do processo de segmentação.
 
 % Após a segmentação das imagens, será desenvolvido um algoritmo para a extração das coordenadas 
 % geográficas das regiões de interesse. Esse algoritmo pode envolver técnicas de reconhecimento 
