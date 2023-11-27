@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.17)  26 NOV 2023 22:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.17)  27 NOV 2023 08:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -279,41 +279,41 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 LaTeX Font Info:    Trying to load font information for U+msb on input line 38.
  (c:/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-Underfull \hbox (badness 4832) in paragraph at lines 99--101
-[]\OT1/ptm/m/n/10 A seguir as sess[]oes ser[]ao ap-re-sen-tadas em or-dem
- []
-
-[1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
+) [1{c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-Underfull \hbox (badness 4168) in paragraph at lines 142--147
+Underfull \hbox (badness 4832) in paragraph at lines 136--138
+[]\OT1/ptm/m/n/10 A seguir as sess[]oes ser[]ao ap-re-sen-tadas em or-dem
+ []
+
+
+Underfull \hbox (badness 4168) in paragraph at lines 179--184
  \OT1/ptm/m/it/10 6) Red-i-men-sion-a-mento: [][] \OT1/ptm/m/n/10 O red-i-men-sion-a-mento []e uma
  []
 
 
-Underfull \hbox (badness 1728) in paragraph at lines 149--154
+Underfull \hbox (badness 1728) in paragraph at lines 186--191
 \OT1/ptm/m/n/10 etapa do pr[]e-processamento que visa cor-ri-gir distor[][]oes
  []
 
 [2]
-Underfull \hbox (badness 5403) in paragraph at lines 257--262
+Underfull \hbox (badness 5403) in paragraph at lines 294--299
  \OT1/ptm/m/it/10 3) Transforma[][]oes Logar[]^^Ptmicas e Ex-po-nen-ci-ais: [][] \OT1/ptm/m/n/10 As
  []
 
-[3]
-Underfull \hbox (badness 7326) in paragraph at lines 383--385
+[3] [4]
+Underfull \hbox (badness 7326) in paragraph at lines 420--422
 []\OT1/ptm/m/n/10 E para as conex[]oes en-tre neur[]onios as seguintes
  []
 
-[4]
-Underfull \hbox (badness 1394) in paragraph at lines 453--457
+
+Underfull \hbox (badness 1394) in paragraph at lines 490--494
 \OT1/ptm/m/n/10 processamento para garan-tir a qual-i-dade e uni-formi-dade
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 721--724
+Underfull \hbox (badness 10000) in paragraph at lines 758--761
 \OT1/ptm/m/n/8 2023. Dispon[]^^Pvel em: <https://www.embrapa.br/busca-de-noticias/-
  []
 
@@ -328,24 +328,22 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6
-
-] (./conference_101719.aux)
+[6] (./conference_101719.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 4213 strings out of 474504
- 64371 string characters out of 5756725
- 1954043 words of memory out of 5000000
- 26146 multiletter control sequences out of 15000+600000
- 601398 words of font info for 125 fonts, out of 8000000 for 9000
+ 4192 strings out of 474504
+ 64165 string characters out of 5756725
+ 1953043 words of memory out of 5000000
+ 26133 multiletter control sequences out of 15000+600000
+ 596670 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,11n,65p,606b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,11n,65p,621b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (6 pages, 131401 bytes).
+Output written on conference_101719.pdf (6 pages, 134958 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  39 compressed objects within 1 object stream
