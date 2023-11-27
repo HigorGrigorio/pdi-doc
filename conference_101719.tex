@@ -1,0 +1,584 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Extração de linhas georreferenciadas para Agricultura de Precisão\\
+% {\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+% should not be used}
+% \thanks{Identify applicable funding agency here. If none, delete this.}
+ }
+
+\author{\IEEEauthorblockN{1\textsuperscript{st} André Luiz da Silva Conde}
+\IEEEauthorblockA{\textit{Instituto Federal de São Paulo (IFSP)} \\
+Birigui, Brasil \\
+andre.conde@aluno.ifsp.edu.br}
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} Higor Grigorio dos Santos}
+\IEEEauthorblockA{\textit{Instituto Federal de São Paulo (IFSP)} \\
+Birigui, Brasil \\
+higor.santos@aluno.ifsp.edu.br}
+\and
+\IEEEauthorblockN{3\textsuperscript{rd} Raul Prado Dantas}
+\IEEEauthorblockA{\textit{Instituto Federal de São Paulo (IFSP)} \\
+% \textit{name of organization (of Aff.)}\\
+Birigui, Brasil \\
+r.dantas@aluno.ifsp.edu.br}
+}
+
+
+\maketitle
+
+\begin{abstract}
+This document is a model and instructions for \LaTeX.
+This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
+or Math in Paper Title or Abstract.
+\end{abstract}
+
+\begin{IEEEkeywords}
+component, formatting, style, styling, insert
+\end{IEEEkeywords}
+
+\section{Introdução}
+
+A agricultura é uma atividade fundamental para a humanidade, 
+sendo responsável pelo desenvolvimento de diversas civilizações e pela produção de alimentos. 
+No Brasil, a agricultura tem evoluído significativamente, contribuindo com uma grande parcela do PIB e 
+das exportações do país \cite{embrapa2023}.
+
+Com o avanço da tecnologia, a agricultura de precisão surgiu como uma forma de otimizar a produção e 
+minimizar os custos e impactos ambientais. Essa abordagem utiliza tecnologias de georreferenciamento, como o GPS, 
+e técnicas de automação, como drones e maquinário agrícola automatizado.
+
+No entanto, um dos principais desafios enfrentados pela agricultura de precisão é a obtenção de dados de 
+georreferenciamento de áreas de interesse em imagens de campos agrícolas. 
+Atualmente, esse processo é realizado manualmente, 
+o que consome tempo significativo e requer mão de obra especializada.
+
+Este trabalho propõe uma solução para esse problema através da utilização de técnicas de 
+processamento de imagens e inteligência artificial. A ideia é desenvolver uma solução automatizada para o 
+georreferenciamento de imagens agrícolas, a fim de melhorar a eficiência, a precisão e a escalabilidade deste 
+processo crucial.
+
+Em resumo, este trabalho apresenta uma contribuição significativa para o avanço do conhecimento na área de IA 
+aplicada à geografia, na área de processamento digital de imagens e para o desenvolvimento de novas ferramentas 
+e aplicações que possam auxiliar os usuários 
+em suas necessidades geográficas. Através da exploração e marcação geográfica automatizada, espera-se melhorar 
+a eficiência e a precisão da agricultura de precisão.
+
+\section{Processamento Digital de Imagens}
+
+O Processamento Digital de Imagens é uma área de estudo que se concentra na manipulação e análise de imagens 
+digitais para melhorar a qualidade ou extrair informações úteis, sendo um conjunto de técnicas computacionais 
+voltadas para a análise de dados multidimensionais, como imagens que possuem conjuntos de valores numéricos 
+representados em duas ou mais dimensões. Esses dados são adquiridos por sensores orbitais e suborbitais, 
+normalmente embarcados em satélites, ônibus espacial, aviões, balões, drones, ou por dispositivos mais comuns, 
+por exemplo câmeras de celulares. 
+
+\cite{gonzalez2009}, afirma que o PDI envolve a manipulação de uma imagem (ou dado) por computador, 
+de tal maneira que a entrada e a saída do processo são imagens, tendo como objetivo principal melhorar o 
+aspecto visual de certas feições estruturais, de tal maneira que o analista consiga melhor interpretar, 
+classificar e tomar decisões com base nos dados existentes na imagem.
+
+Suas técnicas podem ser aplicadas praticamente a toda e qualquer informação gerada via sensoriamento remoto. 
+Seja a mesma obtida de maneira orbital, sub-orbital ou terrestre. Aplicações do PDI incluem áreas como: 
+A análise de recursos naturais e meteorologia por meio de imagens de satélites; 
+A transmissão digital de sinais de televisão ou \emph{fac-símile}; A análise de imagens biomédicas; 
+A análise de imagens metalográficas e de fibras vegetais; 
+A obtenção de imagens médicas por ultra-som, radiação nuclear ou técnicas de tomografia computadorizada; 
+Aplicações em automação industrial envolvendo o uso de sensores visuais em robôs.
+
+É possível dividir o PDI em 3 etapas: Pré-processamento; Realce e; Classificação de imagens.
+
+\subsection{Pré Processamento}
+
+De acordo com \cite{gonzalez2009}, o pré-processamento de imagens digitais é uma etapa de fundamental importância 
+para a obtenção de resultados satisfatórios em qualquer aplicação de processamento de imagens. 
+O pré-processamento é uma etapa de preparação da imagem para as etapas seguintes, que podem ser de segmentação, 
+classificação, reconhecimento, etc. 
+O pré-processamento pode ser dividido em duas etapas: aquisição e melhoria da qualidade da imagem.
+
+\subsubsection{Aquisição}
+
+A aquisição de imagens é a primeira etapa do pré-processamento, e é responsável pela obtenção da imagem a ser 
+processada, podendo ser feita por meio de digitalizadores, câmeras digitais, satélites, etc. A qualidade da imagem 
+obtida depende diretamente do equipamento utilizado para a aquisição. Aquisição de imagens é uma etapa fundamental, 
+pois a qualidade da imagem obtida influência diretamente na qualidade do resultado do processamento.
+
+\subsubsection{Melhoria da qualidade}
+A melhoria da qualidade da imagem é a segunda etapa do pré-processamento, e é responsável por realçar a qualidade 
+da imagem obtida na etapa anterior. A melhoria da qualidade da imagem pode ser feita por meio de técnicas de 
+filtragem, que podem ser de dois tipos: filtragem espacial e filtragem em frequência.
+
+\subsubsection{Filtragem}
+
+A filtragem é uma técnica de processamento de imagens que visa melhorar a qualidade da imagem por meio da 
+remoção de ruídos e/ou realce de detalhes. A filtragem pode ser feita no domínio espacial ou no domínio da 
+frequência. A filtragem espacial é feita por meio de máscaras de convolução, matrizes de números que são aplicadas 
+sobre a imagem, enquanto, filtragem em frequência é feita por meio da transformada de Fourier, que transforma a 
+imagem do domínio espacial para o domínio da frequência, onde a filtragem é feita, e depois a imagem é transformada novamente para o domínio espacial.
+
+\subsubsection{Realce das Bordas}
+O realce das bordas é uma técnica de processamento de imagens que visa realçar as bordas da imagem, 
+de modo que as bordas fiquem mais visíveis. Este método é realizado por meio de máscaras de convolução, 
+como a máscara de Sobel, Laplace e Roberts. O realce das bordas é uma técnica de filtragem espacial.
+
+\subsubsection{Binarização}
+A Binarização é uma técnica de processamento de imagens que visa transformar uma imagem em uma imagem binária, 
+ou seja, uma imagem que possui apenas dois níveis de intensidade, preto e branco. A Binarização é feita por 
+meio de um limiar, sendo um valor que determina se o \emph{pixel} será preto ou branco. Se o valor do \emph{pixel} 
+for maior que o limiar, o \emph{pixel} será branco, caso contrário, o \emph{pixel} será preto.
+
+\subsubsection{Redimensionamento}
+O redimensionamento é uma técnica de processamento de imagens que visa alterar o tamanho da imagem. 
+O redimensionamento pode ser feito por meio de interpolação, uma técnica que visa estimar o valor de um pixel 
+a partir dos valores dos pixel vizinhos, sendo feita por meio de uma função de interpolação, 
+que é uma função que mapeia o valor do pixel para um novo valor. 
+O redimensionamento pode ser feito por meio de interpolações, como linear, bilinear ou bicúbica.
+
+\subsubsection{Correções Geométricas}
+A correção geométrica é uma etapa do pré-processamento que visa corrigir distorções geométricas presentes na imagem. 
+A correção geométrica é feita por meio de pontos de controle, pontos de referência que possuem coordenadas 
+conhecidas. A correção geométrica é feita por meio de transformações geométricas, transformações que alteram a 
+posição dos \emph{pixels} da imagem. As transformações geométricas mais utilizadas são: translação, rotação, escala,
+cisalhamento, etc.
+
+\subsubsection{Normalização}
+A normalização é uma técnica de processamento de imagens que visa alterar o intervalo de intensidade 
+dos \emph{pixels} da imagem. A normalização é feita por meio de uma função de normalização, 
+uma função que mapeia o intervalo de intensidade original para um novo intervalo de intensidade.
+
+\subsection{Realce}
+
+O objetivo principal das técnicas de realce é processar uma imagem, de modo que a imagem resultante seja mais 
+adequada para uma aplicação específica. \cite{gonzalez2000} afirma a importância da ênfase na palavra 
+\emph{específica}, pois uma imagem pode ser melhorada para uma aplicação, mas para outra aplicação, 
+a imagem pode não ser adequada. Por exemplo, uma imagem pode ser melhorada para uma aplicação de detecção de bordas, 
+mas para uma aplicação de detecção de textura, a imagem pode não ser adequada. 
+
+As abordagens de realce podem ser divididas em duas categorias: realce no domínio espacial e realce no domínio da 
+frequência. O domínio espacial refere-se ao próprio plano da imagem, logo as abordagens referentes a esse domínio 
+são aplicadas diretamente sobre os pixeis da imagem. Técnicas abordadas no domínio da frequência são aplicadas 
+sobre a transformada de \emph{Fourier} da imagem, sendo necessário realizar a transformada de \emph{Fourier} da 
+imagem, aplicar a técnica e depois realizar a transformada inversa de \emph{Fourier}. 
+
+\subsubsection{Realce por Processamento Ponto a Ponto}
+
+Técnicas de realce mais comuns são baseadas em processamento ponto-a-ponto (pixel a pixel), essa operação é 
+caracterizada por uma função matemática aplicada a cada pixel da imagem, de modo que o valor do pixel resultante 
+seja uma função do valor do pixel original, independente dos valores dos pixels vizinhos. 
+
+Um exemplo de realce ponto-a-ponto é a transformação de intensidade negativa. Negativos de imagens são uteis em 
+aplicações de microscopia, onde a imagem é obtida por meio de um processo de revelação, e a imagem resultante é 
+uma imagem negativa. O negativo de uma imagem é obtido por meio da negação do valor do pixel, ou seja, o valor do 
+pixel resultante é igual ao valor máximo de intensidade menos o valor do pixel original. 
+A ideia é reverter a imagem, de modo que os pixels mais escuros fiquem mais claros e os pixels mais claros fiquem 
+mais escuros.
+
+\begin{equation}
+g(x, y) = L - 1 - f(x, y)
+\label{eq:neg_img}
+\end{equation}
+onde $L$ é o valor máximo de intensidade e $f(x,y)$ é o valor do pixel original.
+
+\subsubsection{Compressão da Escala Dinâmica}
+
+A compressão de escala dinâmica é uma técnica de realce que visa melhorar o contraste da imagem, 
+de modo que a imagem resultante possua um contraste melhor. 
+A compressão de escala dinâmica é feita por meio de uma função que mapeia o intervalo de intensidade original para 
+um novo intervalo de intensidade. De acordo com \cite{gonzalez2000}, 
+uma alternativa eficiente para comprimir a escala dinâmica de uma imagem é a transformação logarítmica, dada por:
+
+\begin{equation}
+s = c . \log(1 + |r|)
+\label{eq:ecl_din}
+\end{equation}
+onde $r$ é o valor do pixel original, $s$ é o valor do pixel resultante e $c$ é uma constante que 
+controla a amplitude da transformação.
+
+\subsection{Realce no Domínio da Frequência}
+A ideia central do processamento no domínio da frequência é que certas operações, como filtragem, 
+podem ser realizadas mais facilmente ou de forma mais intuitiva no domínio da frequência do que no domínio espacial.
+\cite{gonzalez2000}
+
+Inicialmente, a imagem é convertida do domínio espacial para o domínio da frequência usando a 
+Transformada de Fourier, em imagens, normalmente é usada a Transformada de Fourier 2D.
+
+No domínio da frequência, a imagem representada por suas frequências é multiplicada por um filtro. 
+Essa multiplicação tem o efeito de "passar" ou "bloquear" certas frequências.
+
+Por fim, a imagem modificada é convertida de volta ao domínio espacial usando a Transformada Inversa de Fourier, 
+produzindo a imagem final realçada.
+
+Para a realização das filtragens temos os seguintes filtros:
+\begin{itemize}
+    \item {\textbf{Passa-Baixa:}}
+    Ao usar um filtro passa-baixa, as bordas e outras transições abruptas, como o ruído, nos níveis de cinza de uma 
+    imagem, contribuem fortemente para o conteúdo de alta frequência da transformada de fourier.
+    
+    \item {\textbf{Passa-Alta:}}
+    Usando um filtro passa-alta, as bordas e contornos são mantidas, e em alguns casos realçando-as com alguns 
+    filtros, enquanto as componentes de baixa frequência são rejeitadas.
+    
+    \item {\textbf{Homomórfica:}}
+    A filtragem homomórfica pode ser utilizada para comprimir o intervalo de iluminação e realizar o realce de 
+    contraste simultaneamente, resultando em uma imagem com evidente melhorias de aparência.
+\end{itemize}
+
+\subsection{Operações de Processamento}
+As operações de processamento de imagens desempenham um papel crucial na manipulação e melhoria 
+da qualidade das imagens digitais. Estas operações envolvem uma série de técnicas e métodos que 
+visam modificar características específicas da imagem para atender a requisitos específicos. 
+Abaixo, destacam-se algumas das operações de processamento de imagens mais relevantes:
+
+\subsubsection{Equalização de Histograma}
+A equalização de histograma é uma técnica comumente utilizada para melhorar o contraste em imagens. 
+Essa operação redistribui as intensidades dos pixels na imagem, de modo que a gama completa de 
+intensidades seja mais bem aproveitada. Isso resulta em uma imagem com um espectro 
+mais equilibrado de cores, o que pode ser benéfico para diversas aplicações, como reconhecimento 
+de padrões e análise de texturas.
+
+\subsubsection{Filtros de Suavização}
+Os filtros de suavização são utilizados para reduzir o ruído e as imperfeições de uma imagem,
+tornando-a mais homogênea. Estes filtros incluem técnicas como a média, a mediana e a filtragem 
+gaussiana. A aplicação de filtros de suavização é especialmente útil em imagens que possuem 
+distorções devido a condições adversas, como iluminação inadequada ou interferência de sinal.
+
+\subsubsection{Transformações Logarítmicas e Exponenciais}
+As transformações logarítmicas e exponenciais são utilizadas para comprimir ou expandir a 
+escala de intensidade de uma imagem. A transformação logarítmica é frequentemente utilizada 
+para realçar detalhes em áreas de baixa intensidade, enquanto a transformação exponencial pode 
+ser empregada para realçar áreas de alta intensidade. 
+Essas transformações são valiosas em situações onde certos detalhes necessitam de maior ênfase.
+
+\subsubsection{Filtragem de Frequência}
+A filtragem de frequência no domínio espacial visa realçar ou atenuar componentes 
+de alta ou baixa frequência em uma imagem. Essa operação é frequentemente realizada por meio 
+da aplicação de máscaras de convolução, que enfatizam ou suprimem determinadas características. 
+A filtragem de frequência é útil em diversas aplicações, como a remoção de ruídos específicos 
+ou o destaque de detalhes importantes.
+
+\subsubsection{Transformação de Cores}
+A transformação de cores refere-se à manipulação das componentes de cor em uma imagem. 
+Pode incluir ajustes no equilíbrio de cores, saturação, intensidade, entre outros. 
+Essas operações são valiosas para corrigir distorções de cor e garantir uma representação 
+mais precisa da cena.
+
+\subsection{Segmentação de Imagens}
+A segmentação de imagens é uma tarefa de PDI que tem como objetivo a identificação de regiões de 
+interesse em uma imagem, sendo capaz de separar a imagem em regiões, que podem ser utilizadas 
+para a extração de características, para a classificação de imagens, entre outras tarefas.
+
+A segmentação de imagens é uma tarefa de grande importância para o PDI, sendo utilizada em diversas áreas, como a medicina,
+a astronomia, a agricultura, entre outras. Na medicina é utilizada para a identificação de tumores, na astronomia é utilizada
+para a identificação de estrelas, na agricultura é utilizada para a identificação de plantas daninhas, entre outras aplicações.
+
+Neste trabalho, a segmentação de imagens será utilizada para a identificação do traçado de maquinário agrícola, para a
+extração das coordenadas geográficas, para o uso em equipamentos de agricultura de precisão.
+
+A segmentação de imagem será realizada através do uso de redes neurais convolucionais, que são redes neurais artificiais
+especializadas no processamento de imagens, sendo capazes de realizar a segmentação de imagens, a classificação de imagens,
+entre outras tarefas.
+
+\section{Metodologia}
+Neste capítulo, será apresentada a metodologia utilizada para desenvolver a solução proposta. 
+O processo de georreferenciamento automatizado de imagens agrícolas envolverá diversas etapas, 
+desde a aquisição das imagens até a extração e aplicação das coordenadas geográficas. 
+A seguir, descrevemos as principais etapas da metodologia:
+
+\subsection{Aquisição de Dados}
+
+A obtenção de imagens agrícolas é o ponto de partida do processo. 
+Essas imagens podem ser adquiridas por meio de drones equipados com câmeras de alta resolução, 
+satélites ou outras fontes de sensoriamento remoto. A escolha da fonte de dados dependerá das 
+necessidades específicas do projeto, considerando fatores como resolução espacial, 
+cobertura da área e frequência de aquisição.
+
+\subsection{Pré-processamento das Imagens}
+As imagens adquiridas passarão por um processo de pré-processamento para garantir a qualidade 
+e uniformidade necessárias para as etapas subsequentes. Isso inclui correções geométricas, 
+remoção de ruídos, ajustes de contraste e brilho, entre outros. O objetivo é preparar as 
+imagens de maneira adequada para a segmentação e extração de coordenadas geográficas.
+
+\subsection{Segmentação de Imagens com Redes Neurais Convolucionais}
+A segmentação de imagens será realizada por meio de redes neurais convolucionais (CNNs). 
+Essas redes são capazes de aprender padrões complexos em imagens e são particularmente eficazes 
+em tarefas de segmentação. O treinamento da CNN envolverá o uso de conjuntos de dados rotulados, 
+onde as regiões de interesse nas imagens estarão marcadas.
+
+\subsection{Extração de Coordenadas Geográficas}
+%Validar e incrementar o texto abaixo
+Uma imagem saída do processo de segmentação de imagens não possui nenhuma informação geográfica, sendo necessário a extração
+das coordenadas geográficas das regiões de interesse, para que se possa utilizar as informações extraídas para o uso em
+equipamentos de agricultura de precisão.
+
+Dessa forma é necessário o desenvolvimento de um algoritmo que seja capaz de extrair as coordenadas geográficas das regiões
+de interesse, e aplica-las a imagem resultante do processo de segmentação.
+
+% Após a segmentação das imagens, será desenvolvido um algoritmo para a extração das coordenadas 
+% geográficas das regiões de interesse. Esse algoritmo pode envolver técnicas de reconhecimento 
+% de padrões, processamento de imagem e geometria computacional. O objetivo é associar cada 
+% região segmentada a suas coordenadas geográficas correspondentes.
+
+\subsection{Validação da Solução}
+A solução proposta será validada por meio da comparação das coordenadas geográficas extraídas 
+automaticamente com coordenadas de referência conhecidas. A precisão e eficácia do método serão 
+avaliadas em diferentes cenários e condições.
+
+\section{Resultados e Discussão}
+Neste capítulo, serão apresentados os resultados obtidos com a implementação da solução proposta. 
+Serão discutidos os desempenhos da segmentação de imagens, da extração de coordenadas 
+geográficas e da validação da solução em diferentes contextos agrícolas. 
+Serão também abordadas possíveis limitações e melhorias para trabalhos futuros.
+
+\section{Conclusão}
+Na conclusão, serão apresentadas as principais contribuições do trabalho, destacando a 
+importância da solução proposta para a agricultura de precisão. Serão discutidos os resultados 
+obtidos, as limitações do método e possíveis direções para pesquisas futuras.
+A conclusão reforçará a relevância da automatização do georreferenciamento de imagens 
+agrícolas e seu impacto positivo na eficiência e sustentabilidade da agricultura.
+
+
+% \section{Introduction}
+% This document is a model and instructions for \LaTeX.
+% Please observe the conference page limits. 
+
+% \section{Ease of Use}
+
+% \subsection{Maintaining the Integrity of the Specifications}
+
+% The IEEEtran class file is used to format your paper and style the text. All margins, 
+% column widths, line spaces, and text fonts are prescribed; please do not 
+% alter them. You may note peculiarities. For example, the head margin
+% measures proportionately more than is customary. This measurement 
+% and others are deliberate, using specifications that anticipate your paper 
+% as one part of the entire proceedings, and not as an independent document. 
+% Please do not revise any of the current designations.
+
+% \section{Prepare Your Paper Before Styling}
+% Before you begin to format your paper, first write and save the content as a 
+% separate text file. Complete all content and organizational editing before 
+% formatting. Please note sections \ref{AA}--\ref{SCM} below for more information on 
+% proofreading, spelling and grammar.
+
+% Keep your text and graphic files separate until after the text has been 
+% formatted and styled. Do not number text heads---{\LaTeX} will do that 
+% for you.
+
+% \subsection{Abbreviations and Acronyms}\label{AA}
+% Define abbreviations and acronyms the first time they are used in the text, 
+% even after they have been defined in the abstract. Abbreviations such as 
+% IEEE, SI, MKS, CGS, ac, dc, and rms do not have to be defined. Do not use 
+% abbreviations in the title or heads unless they are unavoidable.
+
+% \subsection{Units}
+% \begin{itemize}
+% \item Use either SI (MKS) or CGS as primary units. (SI units are encouraged.) English units may be used as secondary units (in parentheses). An exception would be the use of English units as identifiers in trade, such as ``3.5-inch disk drive''.
+% \item Avoid combining SI and CGS units, such as current in amperes and magnetic field in oersteds. This often leads to confusion because equations do not balance dimensionally. If you must use mixed units, clearly state the units for each quantity that you use in an equation.
+% \item Do not mix complete spellings and abbreviations of units: ``Wb/m\textsuperscript{2}'' or ``webers per square meter'', not ``webers/m\textsuperscript{2}''. Spell out units when they appear in text: ``. . . a few henries'', not ``. . . a few H''.
+% \item Use a zero before decimal points: ``0.25'', not ``.25''. Use ``cm\textsuperscript{3}'', not ``cc''.)
+% \end{itemize}
+
+% \subsection{Equations}
+% Number equations consecutively. To make your 
+% equations more compact, you may use the solidus (~/~), the exp function, or 
+% appropriate exponents. Italicize Roman symbols for quantities and variables, 
+% but not Greek symbols. Use a long dash rather than a hyphen for a minus 
+% sign. Punctuate equations with commas or periods when they are part of a 
+% sentence, as in:
+% \begin{equation}
+% a+b=\gamma\label{eq}
+% \end{equation}
+
+% Be sure that the 
+% symbols in your equation have been defined before or immediately following 
+% the equation. Use ``\eqref{eq}'', not ``Eq.~\eqref{eq}'' or ``equation \eqref{eq}'', except at 
+% the beginning of a sentence: ``Equation \eqref{eq} is . . .''
+
+% \subsection{\LaTeX-Specific Advice}
+
+% Please use ``soft'' (e.g., \verb|\eqref{Eq}|) cross references instead
+% of ``hard'' references (e.g., \verb|(1)|). That will make it possible
+% to combine sections, add equations, or change the order of figures or
+% citations without having to go through the file line by line.
+
+% Please don't use the \verb|{eqnarray}| equation environment. Use
+% \verb|{align}| or \verb|{IEEEeqnarray}| instead. The \verb|{eqnarray}|
+% environment leaves unsightly spaces around relation symbols.
+
+% Please note that the \verb|{subequations}| environment in {\LaTeX}
+% will increment the main equation counter even when there are no
+% equation numbers displayed. If you forget that, you might write an
+% article in which the equation numbers skip from (17) to (20), causing
+% the copy editors to wonder if you've discovered a new method of
+% counting.
+
+% {\BibTeX} does not work by magic. It doesn't get the bibliographic
+% data from thin air but from .bib files. If you use {\BibTeX} to produce a
+% bibliography you must send the .bib files. 
+
+% {\LaTeX} can't read your mind. If you assign the same label to a
+% subsubsection and a table, you might find that Table I has been cross
+% referenced as Table IV-B3. 
+
+% {\LaTeX} does not have precognitive abilities. If you put a
+% \verb|\label| command before the command that updates the counter it's
+% supposed to be using, the label will pick up the last counter to be
+% cross referenced instead. In particular, a \verb|\label| command
+% should not go before the caption of a figure or a table.
+
+% Do not use \verb|\nonumber| inside the \verb|{array}| environment. It
+% will not stop equation numbers inside \verb|{array}| (there won't be
+% any anyway) and it might stop a wanted equation number in the
+% surrounding equation.
+
+% \subsection{Some Common Mistakes}\label{SCM}
+% \begin{itemize}
+% \item The word ``data'' is plural, not singular.
+% \item The subscript for the permeability of vacuum $\mu_{0}$, and other common scientific constants, is zero with subscript formatting, not a lowercase letter ``o''.
+% \item In American English, commas, semicolons, periods, question and exclamation marks are located within quotation marks only when a complete thought or name is cited, such as a title or full quotation. When quotation marks are used, instead of a bold or italic typeface, to highlight a word or phrase, punctuation should appear outside of the quotation marks. A parenthetical phrase or statement at the end of a sentence is punctuated outside of the closing parenthesis (like this). (A parenthetical sentence is punctuated within the parentheses.)
+% \item A graph within a graph is an ``inset'', not an ``insert''. The word alternatively is preferred to the word ``alternately'' (unless you really mean something that alternates).
+% \item Do not use the word ``essentially'' to mean ``approximately'' or ``effectively''.
+% \item In your paper title, if the words ``that uses'' can accurately replace the word ``using'', capitalize the ``u''; if not, keep using lower-cased.
+% \item Be aware of the different meanings of the homophones ``affect'' and ``effect'', ``complement'' and ``compliment'', ``discreet'' and ``discrete'', ``principal'' and ``principle''.
+% \item Do not confuse ``imply'' and ``infer''.
+% \item The prefix ``non'' is not a word; it should be joined to the word it modifies, usually without a hyphen.
+% \item There is no period after the ``et'' in the Latin abbreviation ``et al.''.
+% \item The abbreviation ``i.e.'' means ``that is'', and the abbreviation ``e.g.'' means ``for example''.
+% \end{itemize}
+% An excellent style manual for science writers is \cite{b7}.
+
+% \subsection{Authors and Affiliations}
+% \textbf{The class file is designed for, but not limited to, six authors.} A 
+% minimum of one author is required for all conference articles. Author names 
+% should be listed starting from left to right and then moving down to the 
+% next line. This is the author sequence that will be used in future citations 
+% and by indexing services. Names should not be listed in columns nor group by 
+% affiliation. Please keep your affiliations as succinct as possible (for 
+% example, do not differentiate among departments of the same organization).
+
+% \subsection{Identify the Headings}
+% Headings, or heads, are organizational devices that guide the reader through 
+% your paper. There are two types: component heads and text heads.
+
+% Component heads identify the different components of your paper and are not 
+% topically subordinate to each other. Examples include Acknowledgments and 
+% References and, for these, the correct style to use is ``Heading 5''. Use 
+% ``figure caption'' for your Figure captions, and ``table head'' for your 
+% table title. Run-in heads, such as ``Abstract'', will require you to apply a 
+% style (in this case, italic) in addition to the style provided by the drop 
+% down menu to differentiate the head from the text.
+
+% Text heads organize the topics on a relational, hierarchical basis. For 
+% example, the paper title is the primary text head because all subsequent 
+% material relates and elaborates on this one topic. If there are two or more 
+% sub-topics, the next level head (uppercase Roman numerals) should be used 
+% and, conversely, if there are not at least two sub-topics, then no subheads 
+% should be introduced.
+
+% \subsection{Figures and Tables}
+% \paragraph{Positioning Figures and Tables} Place figures and tables at the top and 
+% bottom of columns. Avoid placing them in the middle of columns. Large 
+% figures and tables may span across both columns. Figure captions should be 
+% below the figures; table heads should appear above the tables. Insert 
+% figures and tables after they are cited in the text. Use the abbreviation 
+% ``Fig.~\ref{fig}'', even at the beginning of a sentence.
+
+% \begin{table}[htbp]
+% \caption{Table Type Styles}
+% \begin{center}
+% \begin{tabular}{|c|c|c|c|}
+% \hline
+% \textbf{Table}&\multicolumn{3}{|c|}{\textbf{Table Column Head}} \\
+% \cline{2-4} 
+% \textbf{Head} & \textbf{\textit{Table column subhead}}& \textbf{\textit{Subhead}}& \textbf{\textit{Subhead}} \\
+% \hline
+% copy& More table copy$^{\mathrm{a}}$& &  \\
+% \hline
+% \multicolumn{4}{l}{$^{\mathrm{a}}$Sample of a Table footnote.}
+% \end{tabular}
+% \label{tab1}
+% \end{center}
+% \end{table}
+
+% \begin{figure}[htbp]
+% \centerline{\includegraphics{fig1.png}}
+% \caption{Example of a figure caption.}
+% \label{fig}
+% \end{figure}
+
+% Figure Labels: Use 8 point Times New Roman for Figure labels. Use words 
+% rather than symbols or abbreviations when writing Figure axis labels to 
+% avoid confusing the reader. As an example, write the quantity 
+% ``Magnetization'', or ``Magnetization, M'', not just ``M''. If including 
+% units in the label, present them within parentheses. Do not label axes only 
+% with units. In the example, write ``Magnetization (A/m)'' or ``Magnetization 
+% \{A[m(1)]\}'', not just ``A/m''. Do not label axes with a ratio of 
+% quantities and units. For example, write ``Temperature (K)'', not 
+% ``Temperature/K''.
+
+% \section*{Acknowledgment}
+
+% The preferred spelling of the word ``acknowledgment'' in America is without 
+% an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
+% G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
+% acknowledgments in the unnumbered footnote on the first page.
+
+% \section*{References}
+
+% Please number citations consecutively within brackets \cite{b1}. The 
+% sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
+% number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
+% the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+
+% Number footnotes separately in superscripts. Place the actual footnote at 
+% the bottom of the column in which it was cited. Do not put footnotes in the 
+% abstract or reference list. Use letters for table footnotes.
+
+% Unless there are six authors or more give all authors' names; do not use 
+% ``et al.''. Papers that have not been published, even if they have been 
+% submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
+% that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
+% Capitalize only the first word in a paper title, except for proper nouns and 
+% element symbols.
+
+% For papers published in translation journals, please give the English 
+% citation first, followed by the original foreign-language citation \cite{b6}.
+
+\begin{thebibliography}{00}
+% \bibitem{b1} G. Eason, B. Noble, and I. N. Sneddon, ``On certain integrals of Lipschitz-Hankel type involving products of Bessel functions,'' Phil. Trans. Roy. Soc. London, vol. A247, pp. 529--551, April 1955.
+% \bibitem{b2} J. Clerk Maxwell, A Treatise on Electricity and Magnetism, 3rd ed., vol. 2. Oxford: Clarendon, 1892, pp.68--73.
+% \bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+% \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
+% \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
+% \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
+% \bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+    \bibitem{braga2016redes} BRAGA, A. P.; CARVALHO, A. P. L. F.; LUDERMIR, T. B. Redes Neurais
+    Artificiais: Teoria e Aplicações. 2. ed. [S.l.]: LTC, 2016.
+    \bibitem{braga2008algoritmos} BRAGA, D. F. M. M. d. S. Algoritmos de processamento da linguagem natural para
+    sistemas de conversao texto-fala em português. 2008.
+    \bibitem{faceli2022inteligencia} FACELI, K. et al. Inteligência Artificial: Uma Abordagem de Aprendizado de
+    Máquina. 2. ed. [S.l.]: LTC, 2022.
+    \bibitem{gonzalez2000} GONZALEZ, R. C.; WOODS, R. E. Processamento Digital de Imagens. 1. ed. [S.l.]:
+    Edgard Blücher Ltda, 2000. ISBN 8576054019.
+    \bibitem{gonzalez2009} GONZALEZ, R. C.; WOODS, R. E. Processamento Digital de Imagens. [S.l.]:
+    Pearson Universidades, 2009. ISBN 8576054019. 
+    \bibitem{embrapa2023} LAMAS, F. M. A evolução da agricultura do brasil. EMBRAPA, 2023.
+    Disponível em: <https://www.embrapa.br/busca-de-noticias/-/noticia/81665485/
+    artigo---a-evolucao-da-agricultura-do-brasil>.
+    \bibitem{lima2014inteligencia} LIMA, I.; PINHEIRO, C. A. M.; SANTOS, F. A. O. Inteligência Artificial. 1. ed. [S.l.]:
+    Elsevier, 2014.
+\end{thebibliography}
+\vspace{12pt}
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+
+\end{document}
