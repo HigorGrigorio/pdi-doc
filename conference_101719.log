@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.17)  27 NOV 2023 08:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.10.17)  4 DEC 2023 17:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -233,7 +233,11 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1376.
 File: l3backend-pdftex.def 2023-10-10 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count282
 \l__pdf_internal_box=\box55
-) (./conference_101719.aux)
+) (./conference_101719.aux
+
+LaTeX Warning: Label `fig:03' multiply defined.
+
+)
 \openout1 = `conference_101719.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
@@ -307,13 +311,64 @@ Underfull \hbox (badness 7326) in paragraph at lines 420--422
 []\OT1/ptm/m/n/10 E para as conex[]oes en-tre neur[]onios as seguintes
  []
 
-
-Underfull \hbox (badness 1394) in paragraph at lines 490--494
+[5]
+Underfull \hbox (badness 1394) in paragraph at lines 495--499
 \OT1/ptm/m/n/10 processamento para garan-tir a qual-i-dade e uni-formi-dade
  []
 
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 758--761
+<images/01.png, id=26, 642.4pt x 481.8pt>
+File: images/01.png Graphic file (type png)
+<use images/01.png>
+Package pdftex.def Info: images/01.png  used on input line 538.
+(pdftex.def)             Requested size: 258.0pt x 193.5032pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 538--540
+ [][] 
+ []
+
+<images/02.png, id=27, 481.8pt x 361.35pt>
+File: images/02.png Graphic file (type png)
+<use images/02.png>
+Package pdftex.def Info: images/02.png  used on input line 545.
+(pdftex.def)             Requested size: 258.0pt x 193.50505pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 545--547
+ [][] 
+ []
+
+<images/05.png, id=29, 642.4pt x 481.8pt>
+File: images/05.png Graphic file (type png)
+<use images/05.png>
+Package pdftex.def Info: images/05.png  used on input line 560.
+(pdftex.def)             Requested size: 258.0pt x 193.5032pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 560--562
+ [][] 
+ []
+
+<images/03.png, id=30, 642.4pt x 481.8pt>
+File: images/03.png Graphic file (type png)
+<use images/03.png>
+Package pdftex.def Info: images/03.png  used on input line 567.
+(pdftex.def)             Requested size: 258.0pt x 193.5032pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 567--569
+ [][] 
+ []
+
+[6 <./images/01.png (PNG copy)> <./images/02.png>]
+<images/06.png, id=35, 642.4pt x 481.8pt>
+File: images/06.png Graphic file (type png)
+<use images/06.png>
+Package pdftex.def Info: images/06.png  used on input line 584.
+(pdftex.def)             Requested size: 258.0pt x 193.5032pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 584--586
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 822--825
 \OT1/ptm/m/n/8 2023. Dispon[]^^Pvel em: <https://www.embrapa.br/busca-de-noticias/-
  []
 
@@ -328,25 +383,29 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[6] (./conference_101719.aux)
+[7 <./images/05.png (PNG copy)> <./images/03.png (PNG copy)> <./images/06.png (PNG copy)>] (./conference_101719.aux)
  ***********
 LaTeX2e <2023-06-01> patch level 1
 L3 programming layer <2023-10-10>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 4192 strings out of 474504
- 64165 string characters out of 5756725
+ 4233 strings out of 474504
+ 64948 string characters out of 5756725
  1953043 words of memory out of 5000000
- 26133 multiletter control sequences out of 15000+600000
+ 26174 multiletter control sequences out of 15000+600000
  596670 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  57i,11n,65p,621b,334s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on conference_101719.pdf (6 pages, 134958 bytes).
+Output written on conference_101719.pdf (7 pages, 901979 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 76 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

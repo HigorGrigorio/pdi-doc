@@ -476,7 +476,12 @@ promovendo avanços significativos no campo da inteligência artificial.
 Neste capítulo, será apresentada a metodologia utilizada para desenvolver a solução proposta. 
 O processo de georreferenciamento automatizado de imagens agrícolas envolverá diversas etapas, 
 desde a aquisição das imagens até a extração e aplicação das coordenadas geográficas. 
-A seguir, descrevemos as principais etapas da metodologia:
+
+Inicialmente, as as imagens adquiridas passaram por um processo de recorte, para que seja possivel 
+a segmentação da imagem. Após o recorte, as imagens foram segmentadas por meio de redes neurais
+convolucionais, o principal objetivo da segmentação é o destaque do traçado das ruas agrícolas, 
+para que seja possível a extração das coordenadas geográficas através de algoritmos de processamento
+de imagens.
 
 \subsection{Aquisição de Dados}
 
@@ -523,12 +528,71 @@ Serão discutidos os desempenhos da segmentação de imagens, da extração de c
 geográficas e da validação da solução em diferentes contextos agrícolas. 
 Serão também abordadas possíveis limitações e melhorias para trabalhos futuros.
 
+O recorte da area de interesse é segmentado por meio de redes neurais convolucionais, treinadas para destacar 
+as regiões de interesse com base em imagens rotuladas. A Figura 01 apresenta a imagem de entrada, e sua saida
+após a segmentação com rede neural convolucional na Figura 02.
+
+\begin{figure}
+    \centering
+    \caption{Figura 01 - Imagem de entrada}
+    \includegraphics[width=0.5\textwidth]{images/01.png}
+    \label{fig:01}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Figura 02 - Imagem segmentada}
+    \includegraphics[width=0.5\textwidth]{images/02.png}
+    \label{fig:02}
+\end{figure}
+
+
+A partir das imagens processadas pelas redes neurais convolucionais, foi possivel aplicar algoritmos
+de processamento de imagens para a extração das coordenadas geográficas das regiões de interesse. Com a
+finalidade de ajustar e melhorar o resultado dos algoritmos de esquelitização, aplicamos um algoritmo de dilatação. A
+dilatação remove areas que podem atrapanhar o resultado dos algoritmos de esquelitização, como as destacadas em vermelho 
+na imagem 02. Após a dilatação, obtemos a imagem 03, nela é possivel aplicar o algoritmo de de extração de bordas, uma vez que parte
+das imperfeições foram removidas. O algoritmo aplicado para extração das bordas foi canny. A imagem 04 apresenta o resultado da extração.
+
+\begin{figure}
+    \centering
+    \caption{Imagem após a dilatação}
+    \includegraphics[width=0.5\textwidth]{images/05.png}
+    \label{fig:03}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \caption{Imagem após extração das bordas}
+    \includegraphics[width=0.5\textwidth]{images/03.png}
+    \label{fig:04}
+\end{figure}
+
+Por fim, aplicando esqueletização, obtemos a imagem 05. Essa imagem é uma ilustração dos esqueletos
+obtidos sobre a imagem de entrada, que são utilizados para a extração das coordenadas geográficas. É relevamente mensionar que
+nessa etapa, obtemos um vetor de pixels que representam o esqueleto, e a partir desse vetor, é possivel
+realizar a conversão para coordenadas geográficas, atráves de escalas e coordenadas de referência.
+
+Embora os resultados tenham sido satisfatórios, existem fatores que podem afetar a precisão da solução.
+A qualidade das imagens de entrada, por exemplo, pode influenciar o desempenho da segmentação e extração
+de coordenadas geográficas. Além disso, a solução proposta pode ser aprimorada com o uso de técnicas
+avançadas de processamento de imagens e aprendizado de máquina.
+
+\begin{figure}
+    \centering
+    \caption{Imagem após extração do esqueleto}
+    \includegraphics[width=0.5\textwidth]{images/06.png}
+    \label{fig:03}
+\end{figure}
+
 \section{Conclusão}
-Na conclusão, serão apresentadas as principais contribuições do trabalho, destacando a 
-importância da solução proposta para a agricultura de precisão. Serão discutidos os resultados 
-obtidos, as limitações do método e possíveis direções para pesquisas futuras.
-A conclusão reforçará a relevância da automatização do georreferenciamento de imagens 
-agrícolas e seu impacto positivo na eficiência e sustentabilidade da agricultura.
+Neste trabalho, foi proposta uma solução para o georreferenciamento automatizado de imagens agrícolas.
+A solução envolveu o uso de redes neurais convolucionais para a segmentação de imagens e a extração 
+de coordenadas geográficas. A solução foi validada em diferentes cenários e condições, o algoritmos é 
+capaz não só de extrair linhas retas, mas também curvas, o que é muito comum em maquinário agrícola.
+Embora os resultados tenham sido satisfatórios, existem fatores que 
+Portanto a solução proposta é capaz de extrair as coordenadas geográficas de maquinário agrícola,
+para o uso em equipamentos de agricultura de precisão.
 
 
 % \section{Introduction}

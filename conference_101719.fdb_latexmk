@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1701083544 "c:/Users/higor/Desktop/pdi-doc/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1701083545 0
+["pdflatex"] 1701721050 "c:/Users/higor/Desktop/pdi-doc/conference_101719.tex" "conference_101719.pdf" "conference_101719" 1701721051 0
   "IEEEtran.cls" 1701046855 288304 5b2e4fa15b0f7eabb840ebf67df4c0f7 ""
-  "c:/Users/higor/Desktop/pdi-doc/conference_101719.tex" 1701083541 49531 1f98849301be14a4e4bd2ecaa46a270a ""
+  "c:/Users/higor/Desktop/pdi-doc/conference_101719.tex" 1701721048 52859 2c7158785e9f7c78de5173a3a1229f97 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1697506117 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1697507332 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb7t.tfm" 1697516462 2172 fd0c924230362ff848a33632ed45dc23 ""
@@ -72,8 +72,13 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1697518039 4750288 3c81ae0e61ea5051a9e1e981a6246c40 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1697518264 8195424 6249194a956c1a075a80a0ae1c0dbc4a ""
   "c:/texlive/2023/texmf.cnf" 1697518016 713 e69b156964470283e0530f5060668171 ""
-  "conference_101719.aux" 1701083545 5454 e1fc889a87a01276dc80928518fca04b "pdflatex"
-  "conference_101719.tex" 1701083541 49531 1f98849301be14a4e4bd2ecaa46a270a ""
+  "conference_101719.aux" 1701721051 6283 f9bdc718dce0911504e6d6b85a0fbcba "pdflatex"
+  "conference_101719.tex" 1701721048 52859 2c7158785e9f7c78de5173a3a1229f97 ""
+  "images/01.png" 1701717884 323235 a5b24cedb979ba6f018778aed8419c12 ""
+  "images/02.png" 1701719587 52060 9aed563bad86e5e256be82617b48e0d6 ""
+  "images/03.png" 1701717918 29730 f7aec43074607598ef0d6d7481728095 ""
+  "images/05.png" 1701719467 36527 25f363c9c16b2ddc2e479a3d18f0a2f8 ""
+  "images/06.png" 1701720871 331451 238a0ac19cbcd1e5298339349fe105ab ""
   (generated)
   "conference_101719.aux"
   "conference_101719.log"
